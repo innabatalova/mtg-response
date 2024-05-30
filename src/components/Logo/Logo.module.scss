@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.Logo {
+  width: 300px;
+
+  @media screen and (max-width: $md) {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+}
+
+.Wrapper {
+  display: flex;
+
+  @media screen and (max-width: $md) {
+    justify-content: center;
+    width: 100%;
+  }
+}

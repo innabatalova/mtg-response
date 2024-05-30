@@ -1,10 +1,17 @@
 import { Component, ReactNode } from "react"
 
-import Test from './blocks/test/Test'
+import Header from './blocks/Header/Header'
+
+import styles from './App.module.scss'
 
 class App extends Component {
   render(): ReactNode {
-    return <Test />
+    return (
+      <div className={styles.App}>
+        <Header />
+      </div>
+    )
+
   }
 }
 

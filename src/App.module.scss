@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  max-width: 85rem;
+  margin: auto;
+
+  @media screen and (max-width: 740px) {
+    flex-direction: column;
+  }
+}
