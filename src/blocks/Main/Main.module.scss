@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.Main{
+  padding: 1.6rem 2.4rem;
+
+  @media screen and (max-width: $md){
+    padding: 1rem;
+  }
+}

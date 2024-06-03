@@ -20,7 +20,7 @@ class Language extends Component<IProps, IState> {
 
   toogleLanguage = (event: ChangeEvent<HTMLSelectElement>) => {
     this.setState(() => {
-      return { language: event.target.value }
+      return { language: event.target.value as string}
     })
   }
 

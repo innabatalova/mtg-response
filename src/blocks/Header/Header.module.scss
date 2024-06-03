@@ -13,10 +13,15 @@
 }
 
 .Wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 1fr;
 
   @media screen and (max-width: $md) {
-    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
   }
 }

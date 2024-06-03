@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.Theme {
+  height: 45px;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+
+  @media screen and (max-width: $md) {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+}
+
+.Img {
+  width: 45px;
+}
+
+// .Img path{
+//   //fill: #FFFFFF;
+// }
