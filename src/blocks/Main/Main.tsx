@@ -32,7 +32,7 @@ class Main extends Component<IProps, IState> {
     }
   }
 
-  handleClick = (page: number): void => {
+  getPageNumber = (page: number): void => {
     const { itemPerPage } = this.state
     this.setState(() => {
       return {
@@ -58,7 +58,7 @@ class Main extends Component<IProps, IState> {
           )
           )
         }
-        <Pagination totalPages={totalPages.length} itemPerPage={itemPerPage} onChangePage={this.handleClick} activeNumberPage={activeNumberPage} />
+        <Pagination totalPages={totalPages.length} itemPerPage={itemPerPage} onChangePage={this.getPageNumber} activeNumberPage={activeNumberPage} />
       </div>
     )
   }
