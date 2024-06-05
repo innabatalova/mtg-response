@@ -6,6 +6,7 @@
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 
   @media screen and (max-width: $md) {
     grid-row-start: 1;

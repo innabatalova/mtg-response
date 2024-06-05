@@ -14,17 +14,18 @@ class ResponseItem extends Component<IProps> {
   }
 
   render(): ReactNode {
-    const nameStrArr = this.props.name.split(' ')
-    const newStr = nameStrArr[0] + ' ' + (nameStrArr[1] != undefined ? nameStrArr[1][0] + '.' : '') 
+    const { name, review, date } = this.props
+    const nameStrArr = name.split(' ')
+    const newStr = nameStrArr[0] + ' ' + (nameStrArr[1] !== undefined ? nameStrArr[1][0] + '.' : '')
 
     return (
       <>
         <div className={styles.ResponseItem}>
           <div className={styles.Wrapper}>
             <span className={styles.Title}>{newStr}</span>
-            <span className={styles.Title}>{this.props.date}</span>
+            <span className={styles.Title}>{date}</span>
           </div>
-          <span>"{this.props.review}"</span>
+          <span>"{review}"</span>
         </div>
       </>
     )
