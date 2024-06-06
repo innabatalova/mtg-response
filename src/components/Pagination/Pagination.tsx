@@ -1,14 +1,9 @@
 import { Component, ReactNode } from "react"
+import { connect } from "react-redux"
+
+import { IProps } from './interfaces'
 
 import styles from './Pagination.module.scss'
-
-interface IProps {
-  totalPages: number,
-  itemPerPage: number,
-  onChangePage: (page: number) => void,
-  activeNumberPage: number
-}
-
 
 class Pagination extends Component<IProps> {
   render(): ReactNode {
@@ -26,7 +21,7 @@ class Pagination extends Component<IProps> {
         <div className={styles.Pagination}>
           <ul className={styles.List}>
             {pages.map(page => (
-              <li className={styles.Item + ' ' + (page === activeNumberPage ? styles.Item_active : '')} key={page} onClick={() => this.props.onChangePage(page)}>{page}</li>
+              <li className={styles.Item + ' ' + (page === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} key={page} onClick={() => this.props.onChangePage(page)}>{page}</li>
             ))}
           </ul>
         </div >
@@ -40,15 +35,21 @@ class Pagination extends Component<IProps> {
     return (
       <div className={styles.Pagination}>
         <ul className={styles.List}>
-          <li className={styles.Item + ' ' + (min === activeNumberPage ? styles.Item_active : '')} onClick={() => this.props.onChangePage(min)}>{min}</li>
-          <li className={styles.Item} onClick={() => this.props.onChangePage(activeNumberPage < 2 ? activeNumberPage : activeNumberPage - 1)}>{'<'}</li>
-          <li className={styles.Item + ' ' + (mid === activeNumberPage ? styles.Item_active : '')} onClick={() => this.props.onChangePage(mid)}>{mid}</li>
-          <li className={styles.Item} onClick={() => this.props.onChangePage(activeNumberPage > (pages.length - 1) ? activeNumberPage : activeNumberPage + 1)}>{'>'}</li>
-          <li className={styles.Item + ' ' + (max === activeNumberPage ? styles.Item_active : '')} onClick={() => this.props.onChangePage(max)}>{max}</li>
+          <li className={styles.Item + ' ' + (min === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(min)}>{min}</li>
+          <li className={styles.Item + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(activeNumberPage < 2 ? activeNumberPage : activeNumberPage - 1)}>{'<'}</li>
+          <li className={styles.Item + ' ' + (mid === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(mid)}>{mid}</li>
+          <li className={styles.Item + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(activeNumberPage > (pages.length - 1) ? activeNumberPage : activeNumberPage + 1)}>{'>'}</li>
+          <li className={styles.Item + ' ' + (max === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(max)}>{max}</li>
         </ul>
       </div >
     )
   }
 }
 
-export default Pagination
+const mapStateToProps = (state: IProps) => {
+  return {
+    theme: state.theme
+  }
+}
+
+export default connect(mapStateToProps)(Pagination)

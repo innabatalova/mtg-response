@@ -1,7 +1,4 @@
-interface IToogleLanguage {
-  type: "toogleRu" | "toogleEn",
-  language: 'ru' | 'en'
-}
+import { IToogleLanguage } from "../../components/Language/interfaces"
 
 const toogleRu: IToogleLanguage = {
   type: "toogleRu",

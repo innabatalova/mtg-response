@@ -1,13 +1,9 @@
 import { Component } from 'react'
+import { connect } from "react-redux"
+
+import { IProps, IState } from './interfaces'
 
 import styles from './Watch.module.scss'
-
-interface IProps {
-}
-
-interface IState {
-  time: Date
-}
 
 class Watch extends Component<IProps, IState> {
   constructor(props: IProps) {
@@ -39,9 +35,15 @@ class Watch extends Component<IProps, IState> {
       + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2)
 
     return (
-      <div className={styles.Watch}>{timeString}</div>
+      <div className={styles.Watch + ` ${this.props.theme}`}>{timeString}</div>
     )
   }
 }
 
-export default Watch
+const mapStateToProps = (state: IProps) => {
+  return {
+    theme: state.theme
+  }
+}
+
+export default connect(mapStateToProps)(Watch)

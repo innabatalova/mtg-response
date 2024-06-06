@@ -1,12 +1,9 @@
 import { Component, ReactNode } from "react"
+import { connect } from "react-redux"
+
+import { IProps } from "./interfaces"
 
 import styles from './ResponseItem.module.scss'
-
-interface IProps {
-  name: string,
-  review: string,
-  date: string
-}
 
 class ResponseItem extends Component<IProps> {
   render(): ReactNode {
@@ -16,7 +13,7 @@ class ResponseItem extends Component<IProps> {
 
     return (
       <>
-        <div className={styles.ResponseItem}>
+        <div className={styles.ResponseItem + ` ${this.props.theme}`}>
           <div className={styles.Wrapper}>
             <span className={styles.Title}>{newStr}</span>
             <span className={styles.Title}>{date}</span>
@@ -28,4 +25,10 @@ class ResponseItem extends Component<IProps> {
   }
 }
 
-export default ResponseItem
+const mapStateToProps = (state: IProps) => {
+  return {
+    theme: state.theme
+  }
+}
+
+export default connect(mapStateToProps)(ResponseItem)

@@ -4,21 +4,11 @@ import { connect } from "react-redux"
 import ResponseItem from "../../components/ResponseItem/ResponseItem"
 import Pagination from "../../components/Pagination/Pagination"
 
+import { IProps, IState } from './interfaces'
+
 import styles from './Main.module.scss'
 
 import DB from '../../db/data.json'
-
-interface IProps {
-  language: 'ru' | 'en'
-}
-
-interface IState {
-  fisrtIndexPage: number,
-  lastIndexPage: number,
-  itemPerPage: number,
-  activeNumberPage: number
-}
-
 
 class Main extends Component<IProps, IState> {
   constructor(props: IProps) {

@@ -6,6 +6,7 @@ import App from './App'
 
 import store from './store/store'
 
+import './theme.scss'
 import './index.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement)

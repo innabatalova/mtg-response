@@ -1,15 +1,8 @@
 import { legacy_createStore as createStore } from 'redux'
-import languageReducer from './redusers/languageReducer'
+import allReducer from './reduser/reducer'
 
-interface IInitialState {
-  language: "ru" | "en"
-}
+import { IInitialState, IAction } from './interfaces'
 
-interface IAction {
-  type: string,
-  language: "ru" | "en"
-}
-
-const store = createStore<IInitialState, IAction>(languageReducer)
+const store = createStore<IInitialState, IAction>(allReducer)
 
 export default store

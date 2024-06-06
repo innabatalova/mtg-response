@@ -24,24 +24,12 @@
 
 .Item {
   padding: .5rem 1rem;
-  color: #444;
   font-family: 'Rubik';
   font-weight: 700;
   font-size: 16px;
   line-height: 1.3;
-  border: 1px solid #aaa;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
   border-radius: .5rem;
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
   cursor: pointer;
-
-  &:focus,
-  &:hover,
-  &:active {
-    border-color: #aaa;
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-    color: #222;
-  }
 
   @media screen and (max-width: $lg) {
     margin-right: 1rem;
@@ -49,8 +37,46 @@
   }
 }
 
-.Item_active {
-  border-color: #aaa;
-  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-  color: #222;
+[class*="Pagination_Item"][class$="light"] {
+  color: $dark_grey;
+  background-color: $light;
+  border: 1px solid $anthracite;
+  box-shadow: 0 1px 0 1px $dark_shadow;
+  background-image: linear-gradient(to bottom, $light 0%, $beige 100%);
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $anthracite;
+    border-color: $light_grey;
+    box-shadow: 0 0 1px 3px $blue;
+  }
+}
+
+[class*="Pagination_Item"][class$="dark"] {
+  color: $light;
+  background-color: $dark;
+  border: 1px solid $light;
+  box-shadow: 0 1px 0 1px $dark_shadow;
+  background-image: none;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $light;
+    border-color: $light;
+    box-shadow: 0 0 1px 3px $light;
+  }
+}
+
+.Item_active[class$="light"] {
+  color: $anthracite;
+  border-color: $light_grey;
+  box-shadow: 0 0 1px 3px $blue;
+}
+
+.Item_active[class$="dark"] {
+  color: $light;
+  border-color: $light;
+  box-shadow: 0 0 1px 3px $light;
 }

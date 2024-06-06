@@ -1,6 +1,6 @@
 import { Component, ReactNode } from "react"
 
-import LogoImg from './img/logo.jpg'
+import LogoImg from './img/logo.png'
 
 import styles from './Logo.module.scss'
 

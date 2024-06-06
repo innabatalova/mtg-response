@@ -21,6 +21,10 @@
   height: 45px;
 }
 
-// .Img path{
-//   //fill: #FFFFFF;
-// }
+[class*="Theme_Img"][class$="light"] path {
+  fill: $dark;
+}
+
+[class*="Theme_Img"][class$="dark"] path {
+  fill: $light;
+}
