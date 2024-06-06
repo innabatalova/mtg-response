@@ -11,10 +11,6 @@ interface IProps {
 
 
 class Pagination extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
-
   render(): ReactNode {
     const { totalPages, itemPerPage, activeNumberPage } = this.props
 

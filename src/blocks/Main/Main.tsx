@@ -1,4 +1,5 @@
 import { Component, ReactNode } from "react"
+import { connect } from "react-redux"
 
 import ResponseItem from "../../components/ResponseItem/ResponseItem"
 import Pagination from "../../components/Pagination/Pagination"
@@ -8,10 +9,10 @@ import styles from './Main.module.scss'
 import DB from '../../db/data.json'
 
 interface IProps {
+  language: 'ru' | 'en'
 }
 
 interface IState {
-  language: 'ru' | 'en',
   fisrtIndexPage: number,
   lastIndexPage: number,
   itemPerPage: number,
@@ -24,7 +25,6 @@ class Main extends Component<IProps, IState> {
     super(props)
 
     this.state = {
-      language: 'ru',
       lastIndexPage: 10,
       fisrtIndexPage: 0,
       itemPerPage: 10,
@@ -45,7 +45,7 @@ class Main extends Component<IProps, IState> {
 
 
   render(): ReactNode {
-    const totalPages = this.state.language === 'ru' ? Object.entries(DB.ru) : Object.entries(DB.en)
+    const totalPages = this.props.language === 'ru' ? Object.entries(DB.ru) : Object.entries(DB.en)
     const { fisrtIndexPage, lastIndexPage, itemPerPage, activeNumberPage } = this.state
     const currentItems = totalPages.slice(fisrtIndexPage, lastIndexPage)
 
@@ -64,4 +64,10 @@ class Main extends Component<IProps, IState> {
   }
 }
 
-export default Main
+const mapStateToProps = (state: IProps) => {
+  return {
+    language: state.language
+  }
+}
+
+export default connect(mapStateToProps)(Main)

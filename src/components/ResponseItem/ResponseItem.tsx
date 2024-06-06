@@ -9,10 +9,6 @@ interface IProps {
 }
 
 class ResponseItem extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
-
   render(): ReactNode {
     const { name, review, date } = this.props
     const nameStrArr = name.split(' ')
