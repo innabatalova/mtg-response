@@ -9,6 +9,7 @@
 # Technologies used
  - React Classes
  - Redux
+ - Typescript
  - Scss module
  - react-create-app
 
