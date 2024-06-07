@@ -9,14 +9,14 @@ import styles from './Language.module.scss'
 
 class Language extends Component<IProps> {
   toogleLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
-    this.props.language === 'ru' ? this.props.toogleEn() : this.props.toogleRu()
+    this.props.language.language === 'ru' ? this.props.toogleEn() : this.props.toogleRu()
   }
 
   render(): ReactNode {
     return (
       <div className={styles.Language}>
-        <span className={styles.Title + ` ${this.props.theme}`}>{this.props.language === 'ru' ? 'Язык' : 'Language'}</span>
-        <select className={styles.Select + ` ${this.props.theme}`} onChange={this.toogleLanguage} defaultValue={this.props.language}>
+        <span className={styles.Title + ` ${this.props.theme.theme}`}>{this.props.language.language === 'ru' ? 'Язык' : 'Language'}</span>
+        <select className={styles.Select + ` ${this.props.theme.theme}`} onChange={this.toogleLanguage} defaultValue={this.props.language.language}>
           <option>ru</option>
           <option>en</option>
         </select>

@@ -35,7 +35,7 @@ class Main extends Component<IProps, IState> {
 
 
   render(): ReactNode {
-    const totalPages = this.props.language === 'ru' ? Object.entries(DB.ru) : Object.entries(DB.en)
+    const totalPages = this.props.language.language === 'ru' ? Object.entries(DB.ru) : Object.entries(DB.en)
     const { fisrtIndexPage, lastIndexPage, itemPerPage, activeNumberPage } = this.state
     const currentItems = totalPages.slice(fisrtIndexPage, lastIndexPage)
 

@@ -1,5 +1,7 @@
 export interface IProps {
-  theme: 'light' | 'dark',
+  theme: {
+    theme: 'light' | 'dark'
+  },
   totalPages: number,
   itemPerPage: number,
   onChangePage: (page: number) => void,

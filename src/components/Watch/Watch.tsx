@@ -35,7 +35,7 @@ class Watch extends Component<IProps, IState> {
       + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2)
 
     return (
-      <div className={styles.Watch + ` ${this.props.theme}`}>{timeString}</div>
+      <div className={styles.Watch + ` ${this.props.theme.theme}`}>{timeString}</div>
     )
   }
 }

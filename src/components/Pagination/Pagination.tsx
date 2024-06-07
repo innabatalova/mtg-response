@@ -21,7 +21,7 @@ class Pagination extends Component<IProps> {
         <div className={styles.Pagination}>
           <ul className={styles.List}>
             {pages.map(page => (
-              <li className={styles.Item + ' ' + (page === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} key={page} onClick={() => this.props.onChangePage(page)}>{page}</li>
+              <li className={styles.Item + ' ' + (page === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme.theme}`} key={page} onClick={() => this.props.onChangePage(page)}>{page}</li>
             ))}
           </ul>
         </div >
@@ -35,11 +35,11 @@ class Pagination extends Component<IProps> {
     return (
       <div className={styles.Pagination}>
         <ul className={styles.List}>
-          <li className={styles.Item + ' ' + (min === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(min)}>{min}</li>
-          <li className={styles.Item + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(activeNumberPage < 2 ? activeNumberPage : activeNumberPage - 1)}>{'<'}</li>
-          <li className={styles.Item + ' ' + (mid === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(mid)}>{mid}</li>
-          <li className={styles.Item + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(activeNumberPage > (pages.length - 1) ? activeNumberPage : activeNumberPage + 1)}>{'>'}</li>
-          <li className={styles.Item + ' ' + (max === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme}`} onClick={() => this.props.onChangePage(max)}>{max}</li>
+          <li className={styles.Item + ' ' + (min === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme.theme}`} onClick={() => this.props.onChangePage(min)}>{min}</li>
+          <li className={styles.Item + ` ${this.props.theme.theme}`} onClick={() => this.props.onChangePage(activeNumberPage < 2 ? activeNumberPage : activeNumberPage - 1)}>{'<'}</li>
+          <li className={styles.Item + ' ' + (mid === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme.theme}`} onClick={() => this.props.onChangePage(mid)}>{mid}</li>
+          <li className={styles.Item + ` ${this.props.theme.theme}`} onClick={() => this.props.onChangePage(activeNumberPage > (pages.length - 1) ? activeNumberPage : activeNumberPage + 1)}>{'>'}</li>
+          <li className={styles.Item + ' ' + (max === activeNumberPage ? styles.Item_active : '') + ` ${this.props.theme.theme}`} onClick={() => this.props.onChangePage(max)}>{max}</li>
         </ul>
       </div >
     )

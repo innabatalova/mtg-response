@@ -13,7 +13,7 @@ class ResponseItem extends Component<IProps> {
 
     return (
       <>
-        <div className={styles.ResponseItem + ` ${this.props.theme}`}>
+        <div className={styles.ResponseItem + ` ${this.props.theme.theme}`}>
           <div className={styles.Wrapper}>
             <span className={styles.Title}>{newStr}</span>
             <span className={styles.Title}>{date}</span>

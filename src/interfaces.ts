@@ -1,3 +1,5 @@
 export interface IProps {
-  theme: 'light' | 'dark'
+  theme: {
+    theme: 'light' | 'dark'
+  }
 }

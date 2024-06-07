@@ -1,5 +1,7 @@
 export interface IProps {
-  theme: 'light' | 'dark',
+  theme: {
+    theme: 'light' | 'dark'
+  },
   themeLight: () => void,
   themeDark: () => void
 }

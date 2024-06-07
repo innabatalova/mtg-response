@@ -1,5 +1,7 @@
 export interface IProps {
-  language: 'ru' | 'en'
+  language: {
+    language: 'ru' | 'en'
+  }
 }
 
 export interface IState {

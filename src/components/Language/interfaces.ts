@@ -1,6 +1,10 @@
 export interface IProps {
-  language: 'ru' | 'en',
-  theme: 'light' | 'dark',
+  language: {
+    language: 'ru' | 'en',
+  },
+  theme: {
+    theme: 'light' | 'dark'
+  },
   toogleRu: () => void,
   toogleEn: () => void
 }

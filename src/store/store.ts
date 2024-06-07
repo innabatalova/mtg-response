@@ -1,8 +1,6 @@
 import { legacy_createStore as createStore } from 'redux'
-import allReducer from './reduser/reducer'
+import rootReduser from './redusers'
 
-import { IInitialState, IAction } from './interfaces'
-
-const store = createStore<IInitialState, IAction>(allReducer)
+const store = createStore(rootReduser)
 
 export default store

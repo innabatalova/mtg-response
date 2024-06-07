@@ -11,12 +11,11 @@ import styles from './App.module.scss'
 class App extends Component<IProps> {
   render(): ReactNode {
     return (
-      <div className={this.props.theme}>
+      <div className={this.props.theme.theme}>
         <div className={styles.Wrapper}>
           <Header />
           <Main />
         </div>
-
       </div>
     )
   }
