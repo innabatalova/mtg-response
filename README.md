@@ -14,7 +14,7 @@
  - react-create-app
 
  # Install and start
-  "$" npm run install - установка зависимостей
+  "$" npm install - установка зависимостей
 
   "$" npm run build - сборка проекта
 
